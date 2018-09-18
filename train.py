@@ -51,7 +51,7 @@ flags.DEFINE_string('project', None,
 flags.DEFINE_string('logdir', None,
                     'Append a name Tag to run.')
 
-flags.DEFINE_string('hypes', None,
+flags.DEFINE_string('hypes', 'hypes/mynet.json',
                     'File storing model parameters.')
 
 tf.app.flags.DEFINE_boolean(
@@ -474,7 +474,11 @@ def load_united_model(logdir):
 
         with tf.name_scope('Validation_%s' % model):
             tf.get_variable_scope().reuse_variables()
-            image_pl = tf.placeholder(tf.float32)
+
+            # qianbo modified
+            # image_pl = tf.placeholder(tf.float32)
+            image_pl = tf.placeholder(tf.float32, (384, 1248, 3))
+
             image = tf.expand_dims(image_pl, 0)
             inf_out = core.build_inference_graph(hypes, modules,
                                                  image=image)
@@ -552,7 +556,11 @@ def build_united_model(meta_hypes):
 
         with tf.name_scope('Validation_%s' % model):
             tf.get_variable_scope().reuse_variables()
-            image_pl = tf.placeholder(tf.float32)
+
+            # qianbo modified
+            # image_pl = tf.placeholder(tf.float32)
+            image_pl = tf.placeholder(tf.float32, (384, 1248, 3))
+
             image = tf.expand_dims(image_pl, 0)
             inf_out = core.build_inference_graph(hypes, modules,
                                                  image=image)
