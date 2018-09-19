@@ -1,0 +1,12 @@
+[submodule "submodules/KittiSeg"]
+	path = submodules/KittiSeg
+	url = https://github.com/zhuanjiao2222/KittiSeg.git
+[submodule "submodules/KittiBox"]
+	path = submodules/KittiBox
+	url = https://github.com/zhuanjiao2222/KittiBox.git
+[submodule "submodules/tensorflow-fcn"]
+	path = submodules/tensorflow-fcn
+	url = https://github.com/zhuanjiao2222/tensorflow-fcn
+[submodule "submodules/TensorVision"]
+	path = submodules/TensorVision
+	url = https://github.com/zhuanjiao2222/TensorVision.git
